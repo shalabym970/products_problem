@@ -1,3 +1,4 @@
+# A first-level heading
 Products Problem Solving
 This is a Dart program that reads data from a CSV file and writes two output files:
 A file (0_product_table_output.csv) that contains the average quantity of each product ordered.
