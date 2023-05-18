@@ -4,7 +4,7 @@ import 'package:products_problem_soliving/constant.dart';
 
 void writeAverageQuantities(
     Map<String, List<Order>> products, String inputFileName) {
-  final outputFileName = '${Constants.directoryPath}0_$inputFileName';
+  final outputFileName = '${Constants.directoryPath}0_product_table_output.csv';
   final outputFile = File(outputFileName).openWrite();
   for (final productName in products.keys) {
     final orders = products[productName]!;
@@ -19,21 +19,17 @@ void writeAverageQuantities(
 
 void writeMostPopularBrands(
     Map<String, List<Order>> products, String inputFileName) {
-  final outputFileName = '${Constants.directoryPath}1_$inputFileName';
+  final outputFileName = '${Constants.directoryPath}1_product_table_output.csv';
   final outputFile = File(outputFileName).openWrite();
   for (final productName in products.keys) {
     final orders = products[productName]!;
     final brandCounts = <String, int>{};
-    //print("orders  : ${orders.toString()}");
     for (final order in orders) {
       final brand = order.brand;
       if (!brandCounts.containsKey(brand)) {
         brandCounts[brand] = 0;
-        print("1>>>>>");
       }
-      brandCounts[brand] =
-          (brandCounts[brand] ?? 0) + int.parse(order.quantity as String);
-      print("${brandCounts}>>>>>");
+      brandCounts[brand] = (brandCounts[brand] ?? 0) + 1;
     }
 
     final mostPopularBrand = brandCounts.entries
