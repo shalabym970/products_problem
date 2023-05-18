@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:products_problem_soliving/order.dart';
 import 'package:products_problem_soliving/constant.dart';
-import 'package:products_problem_soliving/products_problem_soliving.dart';
+import 'package:products_problem_soliving/functions.dart';
 
 void main() {
   final inputFileName = 'product_table.csv';
@@ -11,12 +11,13 @@ void main() {
   final products = <String, List<Order>>{};
   for (final line in lines.skip(1)) {
     final values = line.split(',');
+
     final order = Order(
-      id: int.parse(values[0]),
-      area: values[1],
-      productName: values[2],
-      quantity: int.parse(values[3]),
-      brand: values[4],
+      id: int.parse(values[0].trim()),
+      area: values[1].trim(),
+      productName: values[2].trim(),
+      quantity: int.parse(values[3].trim()),
+      brand: values[4].trim(),
     );
     if (!products.containsKey(order.productName)) {
       products[order.productName] = [];
@@ -27,4 +28,3 @@ void main() {
   writeAverageQuantities(products, inputFileName);
   writeMostPopularBrands(products, inputFileName);
 }
-
