@@ -1,6 +1,7 @@
 import 'dart:io';
-import 'package:products_problem_soliving/order.dart';
-import 'package:products_problem_soliving/constant.dart';
+import 'constant.dart';
+import 'order.dart';
+
 
 void writeAverageQuantities(
     Map<String, List<Order>> products, String inputFileName) {

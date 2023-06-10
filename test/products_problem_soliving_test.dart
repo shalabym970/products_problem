@@ -1,11 +1,11 @@
-import 'package:products_problem_soliving/constant.dart';
 
 import 'dart:io';
+import 'package:products_problem_soliving/constant.dart';
 import 'package:test/test.dart';
 
 void main() {
   // Define test group
-  group('main', () {
+
     test('writes correct output', () async {
       // Set up input file and expected output files
       final inputFileName = 'product_table.csv';
@@ -56,5 +56,5 @@ void main() {
             equals(expectedMostPopularBrandsLines[i]));
       }
     });
-  });
+
 }
