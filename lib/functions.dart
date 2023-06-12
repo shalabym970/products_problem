@@ -4,7 +4,7 @@ import 'order.dart';
 
 
 void writeAverageQuantities(
-    Map<String, List<Order>> products, String inputFileName) {
+    Map<String, List<Order>> products) {
   final outputFileName = '${Constants.directoryPath}0_product_table_output.csv';
   final outputFile = File(outputFileName).openWrite();
   for (final productName in products.keys) {
@@ -19,7 +19,7 @@ void writeAverageQuantities(
 }
 
 void writeMostPopularBrands(
-    Map<String, List<Order>> products, String inputFileName) {
+    Map<String, List<Order>> products) {
   final outputFileName = '${Constants.directoryPath}1_product_table_output.csv';
   final outputFile = File(outputFileName).openWrite();
   for (final productName in products.keys) {

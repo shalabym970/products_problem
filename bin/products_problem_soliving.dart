@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:products_problem_soliving/constant.dart';
 import 'package:products_problem_soliving/functions.dart';
 import 'package:products_problem_soliving/order.dart';
@@ -26,6 +25,6 @@ void main() {
     products[order.productName]!.add(order);
   }
 
-  writeAverageQuantities(products, inputFileName);
-  writeMostPopularBrands(products, inputFileName);
+  writeAverageQuantities(products);
+  writeMostPopularBrands(products);
 }
